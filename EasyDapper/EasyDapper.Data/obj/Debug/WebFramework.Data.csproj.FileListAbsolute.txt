@@ -1,0 +1,5 @@
+E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Data\bin\Debug\WebFramework.Data.dll
+E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Data\bin\Debug\WebFramework.Data.pdb
+E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Data\obj\Debug\WebFramework.Data.dll
+E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Data\obj\Debug\WebFramework.Data.pdb
+E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Data\obj\Debug\WebFramework.Data.csprojResolveAssemblyReference.cache

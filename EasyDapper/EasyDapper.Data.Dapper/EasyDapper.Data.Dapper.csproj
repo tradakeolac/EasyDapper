@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9AEB9F61-9BD9-4EE1-8C8E-290D37C53568}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebFramework.Data.Dapper</RootNamespace>
+    <AssemblyName>WebFramework.Data.Dapper</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DapperUnitOfWork.cs" />
+    <Compile Include="DataLoaderRepository.cs" />
+    <Compile Include="Extensions\DbConnectionExtensions.cs" />
+    <Compile Include="Helpers\QueryParser\BinaryExpressionParser.cs" />
+    <Compile Include="Helpers\Configuration\ISqlGeneratorCollection.cs" />
+    <Compile Include="Helpers\Configuration\ISqlGeneratorElement.cs" />
+    <Compile Include="Helpers\Configuration\ISqlGeneratorProviderSection.cs" />
+    <Compile Include="Helpers\Configuration\SqlGeneratorCollection.cs" />
+    <Compile Include="Helpers\Configuration\SqlGeneratorElement.cs" />
+    <Compile Include="Helpers\Configuration\SqlGeneratorProviderSection.cs" />
+    <Compile Include="Helpers\QueryParser\ExpressionParserBase.cs" />
+    <Compile Include="Helpers\QueryParser\ExpressionParserResovler.cs" />
+    <Compile Include="Helpers\QueryParser\IExpressionParserResolver.cs" />
+    <Compile Include="Helpers\QueryParser\IExpressionParserStrategy.cs" />
+    <Compile Include="Helpers\QueryParser\InvalidMemberException.cs" />
+    <Compile Include="Helpers\QueryParser\MethodCallExpressionParser.cs" />
+    <Compile Include="Helpers\QueryGenerators\SqlGeneratorProviderResolver.cs" />
+    <Compile Include="Helpers\QueryGenerators\ISqlGeneratorProviderResolver.cs" />
+    <Compile Include="Helpers\ISqlQueryContainer.cs" />
+    <Compile Include="Helpers\QueryGenerators\ISqlGenerator.cs" />
+    <Compile Include="Helpers\ITableMetadataProvider.cs" />
+    <Compile Include="Helpers\QueryGenerators\MySqlGenerator.cs" />
+    <Compile Include="Helpers\QueryGenerators\QueryParameter.cs" />
+    <Compile Include="Helpers\QueryGenerators\SqlQuery.cs" />
+    <Compile Include="Helpers\SqlQueryContainer.cs" />
+    <Compile Include="Helpers\QueryGenerators\SqlServer2012Generator.cs" />
+    <Compile Include="Helpers\DefaultTableMetaDataProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\QueryBuilder.cs" />
+    <Compile Include="Repository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EasyDapper.Data\EasyDapper.Data.csproj">
+      <Project>{5a1824bd-692f-4bd5-ae37-a34ec840cbdf}</Project>
+      <Name>EasyDapper.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyDapper.Infrastructure\EasyDapper.Infrastructure.csproj">
+      <Project>{1eddf930-b5ce-427d-9acb-b229aa51a85a}</Project>
+      <Name>EasyDapper.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
