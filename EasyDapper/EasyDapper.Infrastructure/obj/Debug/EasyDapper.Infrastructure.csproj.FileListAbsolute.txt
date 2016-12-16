@@ -1,4 +1,0 @@
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure\bin\Debug\WebFramework.Infrastructure.dll
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure\bin\Debug\WebFramework.Infrastructure.pdb
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure\obj\Debug\WebFramework.Infrastructure.dll
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure\obj\Debug\WebFramework.Infrastructure.pdb

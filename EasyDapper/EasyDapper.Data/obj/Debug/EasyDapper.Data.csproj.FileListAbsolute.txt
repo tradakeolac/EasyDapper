@@ -1,4 +1,0 @@
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Data\bin\Debug\WebFramework.Data.dll
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Data\bin\Debug\WebFramework.Data.pdb
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Data\obj\Debug\WebFramework.Data.dll
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Data\obj\Debug\WebFramework.Data.pdb

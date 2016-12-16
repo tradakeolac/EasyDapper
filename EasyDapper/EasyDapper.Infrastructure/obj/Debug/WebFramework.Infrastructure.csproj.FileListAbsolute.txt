@@ -1,5 +1,0 @@
-E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Infrastructure\bin\Debug\WebFramework.Infrastructure.dll
-E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Infrastructure\bin\Debug\WebFramework.Infrastructure.pdb
-E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Infrastructure\obj\Debug\WebFramework.Infrastructure.dll
-E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Infrastructure\obj\Debug\WebFramework.Infrastructure.pdb
-E:\Study\Projects\webframework\01.Source\src\WebFramework\WebFramework.Infrastructure\obj\Debug\WebFramework.Infrastructure.csprojResolveAssemblyReference.cache

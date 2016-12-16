@@ -1,9 +1,0 @@
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure.Tests\bin\Debug\EasyDapper.Infrastructure.Tests.dll
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure.Tests\bin\Debug\EasyDapper.Infrastructure.Tests.pdb
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure.Tests\bin\Debug\WebFramework.Infrastructure.dll
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure.Tests\bin\Debug\WebFramework.Infrastructure.pdb
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure.Tests\obj\Debug\EasyDapper.Infrastructure.Tests.csprojResolveAssemblyReference.cache
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure.Tests\obj\Debug\EasyDapper.Infrastructure.Tests.dll
-E:\OpenSource\EasyDapper\EasyDapper\EasyDapper.Infrastructure.Tests\obj\Debug\EasyDapper.Infrastructure.Tests.pdb
