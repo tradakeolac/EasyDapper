@@ -1,11 +1,19 @@
 ﻿namespace EasyDapper.Data.Dapper.Helpers
 {
+    using EasyDapper.Data.Dapper.Helpers.QueryParser;
     using System.Collections;
     using System.Linq.Expressions;
     using System.Reflection;
 
     public class MethodCallExpressionParser : ExpressionParserBase, IExpressionParserStrategy
     {
+        protected readonly IServiceResolver<IMethodCallTranslator> ServiceResolver;
+
+        public MethodCallExpressionParser(IServiceResolver<IMethodCallTranslator> serviceResolver)
+        {
+            this.ServiceResolver = serviceResolver;
+        }
+
         public void Parser(Expression expression, ExpressionType linkingType, ref QueryParameterCollection queryProperties)
         {
             var methodCallExpression = (MethodCallExpression)expression;
@@ -35,52 +43,12 @@
 
         private string MethodCallToSqlOperand(MethodCallExpression expression)
         {
-            if (expression.Method.DeclaringType == typeof(string))
-            {
-                return @"LIKE";
-            }
-
-            if (expression.Method.DeclaringType == typeof(System.Linq.Enumerable))
-            {
-                return @"IN";
-            }
-
-            return @"LIKE";
+            return ServiceResolver.Resolve(expression.Method.DeclaringType).TranslateQueryOperand(expression);
         }
 
         private dynamic MethodCallToSqlArgument(MethodCallExpression expression)
         {
-            dynamic value = expression.Arguments[0];
-
-            if (expression.Method.DeclaringType == typeof(string))
-            {
-                if (expression.Method.Name == @"Contains")
-                {
-                    return string.Format(@"%{0}%", value.Value);
-                }
-
-                if (expression.Method.Name == @"StartsWith")
-                {
-                    return string.Format(@"{0}%", value.Value);
-                }
-
-                if (expression.Method.Name == @"EndsWith")
-                {
-                    return string.Format(@"%{0}", value.Value);
-                }
-            }
-
-            if (expression.Method.DeclaringType == typeof(System.Linq.Enumerable))
-            {
-                if (value is MemberExpression)
-                {
-                    value = GetPropetyValue(value as MemberExpression) as IEnumerable;
-                }
-
-                return $"({string.Join(",", value)})";
-            }
-
-            return null;
+            return ServiceResolver.Resolve(expression.Method.DeclaringType).TranslateQueryArgument(expression);
         }
     }
 }

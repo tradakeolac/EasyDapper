@@ -7,7 +7,7 @@
         private readonly IEasyDapperSection EasyDapperSection;
         public EasyDapperConfiguration(IEasyDapperSection configSection)
         {
-            this.EasyDapperSection = configSection;
+            EasyDapperSection = configSection;
         }
 
         public string CacheProvider

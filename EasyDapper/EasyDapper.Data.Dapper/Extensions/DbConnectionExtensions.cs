@@ -12,12 +12,26 @@
         /// <param name="dbConnection"></param>
         /// <param name="func"></param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException"><paramref name="dbConnection"/> is <c>null</c>.</exception>
+        /// <exception cref="Exception"></exception>
         internal static TResult Run<TResult>(this IDbConnection dbConnection, Func<IDbConnection, TResult> func)
         {
-            dbConnection.Open();
-            var result = func(dbConnection);
-            dbConnection.Close();
-            return result;
+            if (dbConnection == null)
+                throw new ArgumentNullException(nameof(dbConnection), "The connection can not be null!");
+            try
+            {
+                dbConnection.Open();
+                return func(dbConnection);
+            }
+            catch(Exception ex)
+            {
+                // Log
+                throw;
+            }
+            finally
+            {
+                dbConnection.Close();
+            }
         }
 
         /// <summary>
@@ -25,13 +39,28 @@
         /// </summary>
         /// <param name="dbConnection"></param>
         /// <param name="action"></param>
+        /// <exception cref="Exception"></exception>
+        /// <exception cref="ArgumentNullException"><paramref name="dbConnection"/> is <c>null</c>.</exception>
         internal static void Run(this IDbConnection dbConnection, Action<IDbConnection> action)
         {
-            dbConnection.Open();
-            // Run action
-            action(dbConnection);
+            if (dbConnection == null)
+                throw new ArgumentNullException(nameof(dbConnection), "The connection can not be null!");
 
-            dbConnection.Close();
+            try
+            {
+                dbConnection.Open();
+                // Run action
+                action(dbConnection);
+            }
+            catch(Exception ex)
+            {
+                // Log
+                throw;
+            }
+            finally
+            {
+                dbConnection.Close();
+            }
         }
     }
 }

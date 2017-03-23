@@ -11,8 +11,8 @@ namespace EasyDapper.Data.Dapper.Queries
         {
             if (expression.Body is MemberExpression)
             {
-                var type = ((MemberExpression)expression.Body).Type;
-                var refType = type.IsGenericType ? type.GetGenericArguments()[0] : type.GetType();
+                var type = expression.Body.Type;
+                var refType = type.IsGenericType ? type.GetGenericArguments()[0] : type;
             }
 
             return builder;
@@ -21,6 +21,7 @@ namespace EasyDapper.Data.Dapper.Queries
 
     public class DelegateQueryBuilder<T> 
     {
+        
     }
 
     public class IncludeReference<T> : DelegateQueryBuilder<T>

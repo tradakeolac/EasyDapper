@@ -6,13 +6,16 @@
     }
 
     [System.AttributeUsage(System.AttributeTargets.Property, AllowMultiple = false)]
-    public sealed class IgnoreMapAttribute : ORMAttribute { }
+    public sealed class IgnoreMapAttribute : ORMAttribute
+    {
+    }
 
+    [System.AttributeUsage(System.AttributeTargets.Property, AllowMultiple = false)]
     public sealed class MapColumnAttribute : ORMAttribute
     {
         public MapColumnAttribute(string property)
         {
-            this.Column = property;
+            Column = property;
         }
 
         public string Column { get; set; }
