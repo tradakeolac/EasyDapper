@@ -7,8 +7,8 @@
     <ProjectGuid>{9AEB9F61-9BD9-4EE1-8C8E-290D37C53568}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebFramework.Data.Dapper</RootNamespace>
-    <AssemblyName>WebFramework.Data.Dapper</AssemblyName>
+    <RootNamespace>EasyDapper.Data.Dapper</RootNamespace>
+    <AssemblyName>EasyDapper.Data.Dapper</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,6 +49,8 @@
     <Compile Include="DapperUnitOfWork.cs" />
     <Compile Include="DataLoaderRepository.cs" />
     <Compile Include="Extensions\DbConnectionExtensions.cs" />
+    <Compile Include="Extensions\ExpressionExtensions.cs" />
+    <Compile Include="Helpers\QueryGenerators\QueryParameterCollection.cs" />
     <Compile Include="Helpers\QueryParser\BinaryExpressionParser.cs" />
     <Compile Include="Helpers\Configuration\ISqlGeneratorCollection.cs" />
     <Compile Include="Helpers\Configuration\ISqlGeneratorElement.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="Helpers\QueryParser\ExpressionParserResovler.cs" />
     <Compile Include="Helpers\QueryParser\IExpressionParserResolver.cs" />
     <Compile Include="Helpers\QueryParser\IExpressionParserStrategy.cs" />
+    <Compile Include="Helpers\QueryParser\IMethodCallTranslator.cs" />
     <Compile Include="Helpers\QueryParser\InvalidMemberException.cs" />
     <Compile Include="Helpers\QueryParser\MethodCallExpressionParser.cs" />
     <Compile Include="Helpers\QueryGenerators\SqlGeneratorProviderResolver.cs" />

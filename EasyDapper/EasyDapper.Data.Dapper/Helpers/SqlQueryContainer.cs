@@ -39,7 +39,7 @@
         public SqlQuery SelectById<T>(object id) where T : class
         {
             IDictionary<string, object> param = new ExpandoObject();
-            param.Add("@ID", id);
+            param.Add($"@{TableInfo.PrimaryKey<T>()}", id);
             return new SqlQuery(string.Format("SELECT * FROM {0} WHERE {1} = @{1}", TableInfo.TableName<T>(), TableInfo.PrimaryKey<T>()), param);
         }
 
