@@ -79,7 +79,7 @@ namespace EasyDapper.Data.Dapper.Helpers
             IDictionary<string, object> expando = new ExpandoObject();
             for (int i = 0; i < this.Count; i++)
             {
-                QueryParameter item = this[i];
+                var item = this[i];
 
                 if (!string.IsNullOrEmpty(item.LinkingOperator) && i > 0)
                 {

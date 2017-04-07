@@ -17,13 +17,12 @@ namespace EasyDapper.Data.Dapper.Tests
         {
             IMethodCallTranslator translator = new StringMethodCallTranslator();
             var mock = new Mock<IServiceResolver<IMethodCallTranslator>>();
-            mock.Setup(m => m.Resolve(It.IsAny<Type>()))
-                .Returns(translator);
+            mock.Setup(m => m.Resolve(It.IsAny<Type>())).Returns(translator);
 
             IExpressionParserStrategy parser = new MethodCallExpressionParser(mock.Object);
             var collection = new QueryParameterCollection();
             Func<SimpleModel, bool> s = (b) => b.Name.Contains("A");
-            ParameterExpression param = Expression.Parameter(typeof(SimpleModel), "s");
+            var param = Expression.Parameter(typeof(SimpleModel), "s");
             Expression property = Expression.Property(param, "Name");
             Expression left = Expression.Call(property, typeof(string).GetMethod("Contains"), Expression.Constant("A"));
 

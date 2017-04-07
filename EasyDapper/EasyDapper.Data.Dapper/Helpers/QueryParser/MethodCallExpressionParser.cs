@@ -30,7 +30,7 @@
             }
         }
 
-        private string GetPropertyName(MethodCallExpression body)
+        private static string GetPropertyName(MethodCallExpression body)
         {
             string propertyName = null;
             if (body.Object != null) // Current entity call its properties

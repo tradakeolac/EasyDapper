@@ -20,7 +20,7 @@
             if (expression.NodeType != ExpressionType.AndAlso && expression.NodeType != ExpressionType.OrElse)
             {
                 var propertyName = GetPropertyName(binary);
-                dynamic propertyValue = GetPropetyValue(binary.Right as MemberExpression);
+                var propertyValue = GetPropetyValue(binary.Right as MemberExpression);
                 var opr = GetOperator(expression.NodeType);
                 var link = GetLinkOperator(linkingType);
 
@@ -33,9 +33,9 @@
             }
         }
 
-        private string GetPropertyName(BinaryExpression body)
+        private static string GetPropertyName(BinaryExpression body)
         {
-            string propertyName = body.Left.ToString().Split(new char[] { '.' })[1];
+            var propertyName = body.Left.ToString().Split(new char[] { '.' })[1];
 
             if (body.Left.NodeType == ExpressionType.Convert)
             {
@@ -46,7 +46,7 @@
             return propertyName;
         }
 
-        private string GetOperator(ExpressionType expressionType)
+        private static string GetOperator(ExpressionType expressionType)
         {
             switch (expressionType)
             {
